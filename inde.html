@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mother Dairy Safety Training Certificate</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="title">Mother Dairy Safety Training</h1>
+                    <p class="subtitle">
+                        Complete the training video to generate your certificate
+                    </p>
+                </div>
+            </header>
+
+            <!-- Video Section -->
+            <section class="video-section">
+                <div class="video-container">
+                    <h2 class="section-title">Training Video</h2>
+                    <div class="video-wrapper">
+                        <video id="trainingVideo" class="video-player" controls>
+                            <source
+                                src="your-video.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser does not support the video tag.
+                        </video>
+
+                        <!-- Progress Bar -->
+                        <div class="progress-container">
+                            <div id="progressBar" class="progress-bar"></div>
+                        </div>
+
+                        <!-- Video Completion Overlay -->
+                        <div
+                            id="completionOverlay"
+                            class="completion-overlay hidden"
+                        >
+                            <div class="completion-content">
+                                <div class="completion-icon">✓</div>
+                                <h3>Video Completed!</h3>
+                                <p>
+                                    You can now proceed to generate your
+                                    certificate
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Stats -->
+                    <div class="video-stats">
+                        <div class="time-display">
+                            <span id="timeDisplay">0:00 / 0:00</span>
+                        </div>
+                        <div class="completion-status">
+                            <span
+                                id="statusIndicator"
+                                class="status-dot status-incomplete"
+                            ></span>
+                            <span id="statusText"
+                                >Video must be completed to unlock form</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificate Form Section -->
+            <section class="form-section">
+                <div class="form-container">
+                    <h2 class="section-title">Certificate Information</h2>
+                    <form
+                        id="certificateForm"
+                        class="certificate-form form-locked"
+                    >
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                required
+                            />
+                            <span
+                                class="error-message"
+                                id="firstNameError"
+                            ></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="lastName"
+                                required
+                            />
+                            <span
+                                class="error-message"
+                                id="lastNameError"
+                            ></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                            />
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                required
+                            />
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="photo">Profile Photo (Optional)</label>
+                            <input
+                                type="file"
+                                id="photo"
+                                name="photo"
+                                accept="image/*"
+                            />
+                            <div
+                                id="photoPreview"
+                                class="photo-preview hidden"
+                            ></div>
+                        </div>
+
+                        <button type="submit" class="submit-button" disabled>
+                            Generate Certificate
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="success-icon">✓</div>
+                    <h3>Certificate Generated Successfully!</h3>
+                    <button class="close-button" id="closeModal">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Your Mother Dairy Safety Training Certificate has been
+                        generated and downloaded.
+                    </p>
+                    <p>Certificate ID: <span id="certificateId"></span></p>
+                    <div class="modal-actions">
+                        <button id="downloadAgain" class="action-button">
+                            Download Again
+                        </button>
+                        <button
+                            id="generateNew"
+                            class="action-button secondary"
+                        >
+                            Generate New
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
